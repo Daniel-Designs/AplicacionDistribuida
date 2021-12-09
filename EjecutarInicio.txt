@@ -1,0 +1,20 @@
+-----------Configuracion inical de REDAT
+
+sudo yum install python36
+
+curl -O https://bootstrap.pypa.io/get-pip.py
+
+python3 get-pip.py --user
+
+pip install pandas
+
+pip install CherryPy
+
+
+------Instalar git
+
+sudo yum install git
+
+git clone https://github.com/Daniel-Designs/AplicacionDistribuida.git
+
+cd AplicacionDistribuida

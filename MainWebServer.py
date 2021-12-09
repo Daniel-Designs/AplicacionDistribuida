@@ -8,7 +8,26 @@ class MyWebService(object):
    @cherrypy.expose
    @cherrypy.tools.json_out()
    @cherrypy.tools.json_in()
-   def suma1(self):
+   def listarProductos(self):
+      output = p.listarProductos
+      return output.to_json
+
+ '''  @cherrypy.expose
+   @cherrypy.tools.json_out()
+   @cherrypy.tools.json_in()
+   def compraArticulo(self):
+   
+   @cherrypy.expose
+   @cherrypy.tools.json_out()
+   @cherrypy.tools.json_in()
+   def pagaProducto(self):'''
+   
+   
+   
+   @cherrypy.expose
+   @cherrypy.tools.json_out()
+   @cherrypy.tools.json_in()
+   def suma(self):
       data = cherrypy.request.json
       df = pd.DataFrame(data)
       

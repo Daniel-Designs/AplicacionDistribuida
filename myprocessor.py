@@ -1,18 +1,24 @@
 class sumaMulti:    
 
+productos = [{'ID': '1','NAME':'Producto1'},
+                {'ID': '1','NAME':'Producto1'},
+                {'ID': '1','NAME':'Producto1'},
+                {'ID': '1','NAME':'Producto1'},
+                {'ID': '1','NAME':'Producto1'}]
+
+
+
+
+   ''' 
+    def pagaProducto(self,ID):
+
+    def compraArticulo(self,ID): 
+   '''
+
+    def listarProductos(self):
+        return productos
+
     def suma(self, df): 
         df['sum'] = df.sum(axis=1)
         return  df
         
-    def multiplicacion(self, df):        
-        df['mul']=df['num1']*df['num2']
-        return df
-    def resta(self, df): 
-        df['rest'] = df['num1']-df['num2']
-        return  df
-        
-    def div(self, df):        
-        df['div']=df['num1']/df['num2']
-        df.head()
-        return df
-    
