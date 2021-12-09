@@ -8,9 +8,10 @@ class MyWebService(object):
    @cherrypy.expose
    @cherrypy.tools.json_out()
    @cherrypy.tools.json_in()
-   def suma(self):
+   def suma1(self):
       data = cherrypy.request.json
       df = pd.DataFrame(data)
+      
       output = p.suma(df)
       return output.to_json()
 
