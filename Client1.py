@@ -15,24 +15,24 @@ headers = {
 
 data = '{"num1" : [1, 2, 3], "num2":[4, 5, 6]}'
 
-response = requests.post('http://localhost:8080/suma', headers=headers, data=data)
+response = requests.post('http://18.213.246.163:8080/suma', headers=headers, data=data)
 djson = response.json()
 djson = json.loads(djson)
 see(djson)
 print()
-response = requests.post('http://localhost:8080/multiplicacion', headers=headers, data=data)
-djson = response.json()
-djson = json.loads(djson)
-see(djson)
-print()
-
-response = requests.post('http://localhost:8080/resta', headers=headers, data=data)
+response = requests.post('http://18.213.246.163:8080/multiplicacion', headers=headers, data=data)
 djson = response.json()
 djson = json.loads(djson)
 see(djson)
 print()
 
-response = requests.post('http://localhost:8080/div', headers=headers, data=data)
+response = requests.post('http://18.213.246.163:8080/resta', headers=headers, data=data)
+djson = response.json()
+djson = json.loads(djson)
+see(djson)
+print()
+
+response = requests.post('http://18.213.246.163:8080/div', headers=headers, data=data)
 djson = response.json()
 djson = json.loads(djson)
 see(djson)

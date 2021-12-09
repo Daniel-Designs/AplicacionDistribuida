@@ -1,4 +1,5 @@
-class sumaMulti:     
+class sumaMulti:    
+
     def suma(self, df): 
         df['sum'] = df.sum(axis=1)
         return  df
