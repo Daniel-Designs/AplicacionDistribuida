@@ -1,12 +1,9 @@
 class sumaMulti:    
 
-productos = [{'ID': '1','NAME':'Producto1'},
-                {'ID': '1','NAME':'Producto1'},
-                {'ID': '1','NAME':'Producto1'},
-                {'ID': '1','NAME':'Producto1'},
-                {'ID': '1','NAME':'Producto1'}]
-                
+
+
     def listarProductos(self):
+        productos = {'ID': '1','NAME':'Producto1'}
         return productos
 
     def suma(self, df): 
