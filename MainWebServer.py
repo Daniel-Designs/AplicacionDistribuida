@@ -12,17 +12,6 @@ class MyWebService(object):
       output = p.listarProductos
       return output.to_json
 
- '''  @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
-   def compraArticulo(self):
-   
-   @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
-   def pagaProducto(self):'''
-   
-   
    
    @cherrypy.expose
    @cherrypy.tools.json_out()
