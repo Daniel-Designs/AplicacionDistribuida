@@ -1,16 +1,15 @@
 import cherrypy
 import pandas as pd
 import myprocessor
+import json
 p = myprocessor.sumaMulti()
 
 class MyWebService(object):
 
    @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
    def listarProductos(self):
-      output = p.listarProductos
-      return output.to_json
+      output = p.listarProductos() 
+      return json.dumps(output)
 
    
    @cherrypy.expose
@@ -23,33 +22,6 @@ class MyWebService(object):
       output = p.suma(df)
       return output.to_json()
 
-   @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
-   def resta(self):
-      data = cherrypy.request.json
-      df = pd.DataFrame(data)
-      output = p.resta(df)
-      return output.to_json()
-   
-
-   @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
-   def multiplicacion(self):
-      data = cherrypy.request.json
-      df = pd.DataFrame(data)
-      output = p.multiplicacion(df)
-      return output.to_json() 
-
-   @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
-   def div(self):
-      data = cherrypy.request.json
-      df = pd.DataFrame(data)
-      output = p.div(df)
-      return output.to_json() 
 
   
 
