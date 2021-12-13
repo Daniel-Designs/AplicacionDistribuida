@@ -41,11 +41,10 @@ while repetir == 'si':
 
     elif menu == 2:
         print('Comprar Productos: \n\n')
-        response = requests.post('http://10.95.1.4:8080/suma', headers=headers, data=data)
+        producto={'ID':'2'}
+        response = requests.post('http://10.95.1.4:8080/suma', json=producto)
         djson = response.json()
-        djson = json.loads((djson))
-        #print(djson)
-        see(djson)
+        print(djson)
         print()
     elif menu == 3:
         print('Pagar Productos: \n\n')

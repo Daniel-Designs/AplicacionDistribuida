@@ -11,6 +11,14 @@ class MyWebService(object):
       output = p.listarProductos() 
       return json.dumps(output)           #Chance ya no necesito enviar nada.
 
+   @cherrypy.expose
+   def comprarProductoByID(self):
+      producto = cherrypy.request.json
+      output = p.comprarProductoByID(producto) 
+      return json.dumps(output)          
+
+   
+   
    
    @cherrypy.expose
    @cherrypy.tools.json_out()
