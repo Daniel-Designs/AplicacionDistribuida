@@ -1,6 +1,6 @@
 import cherrypy
 import pandas as pd
-import MainProcessor
+import SecundaryProcessor
 import json
 p = myprocessor.sumaMulti()
 
@@ -9,7 +9,7 @@ class MyWebService(object):
    @cherrypy.expose
    def listarProductos(self):
       output = p.listarProductos() 
-      return json.dumps(output)           #Chance ya no necesito enviar nada.
+      return json.dumps(output)
 
    
    @cherrypy.expose
