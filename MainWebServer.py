@@ -2,7 +2,7 @@ import cherrypy
 import pandas as pd
 import MainProcessor
 import json
-p = myprocessor.sumaMulti()
+p = MainProcessor.ServerFunctions()
 
 class MyWebService(object):
 

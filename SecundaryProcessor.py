@@ -1,4 +1,4 @@
-class sumaMulti:    
+class ServerFunctions:    
     def listarProductos(self):
         productos = [{'ID': '1','NAME':'Producto1'},
         {'ID': '2','NAME':'Producto2'},

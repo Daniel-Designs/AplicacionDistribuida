@@ -1,7 +1,7 @@
 import requests
 import json
 
-class sumaMulti:    
+class ServerFunctions:    
 
     def listarProductos(self):
         headers = {
