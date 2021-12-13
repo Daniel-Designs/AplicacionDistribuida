@@ -21,7 +21,9 @@ class ServerFunctions:
         return djson
 
     def comprarProductoByID(self, producto):
-        
+        headers = {
+            'Content-Type': 'application/json',
+        }
         response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
         productos = response.json()
         print(productos)
