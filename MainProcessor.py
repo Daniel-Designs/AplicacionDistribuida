@@ -9,12 +9,12 @@ class ServerFunctions:
         }
 
         data = '{"num1" : [1, 2, 3], "num2":[4, 5, 6]}'
-        response = requests.post('http://10.95.1.4:8080/suma', headers=headers, data=data)
+        response = requests.post('http://10.95.1.79:8080/suma', headers=headers, data=data)
         djson = response.json()
         djson = json.loads(djson)
         print(djson)
 
-        response = requests.get('http://10.95.1.4:8080/listarProductos', headers=headers)
+        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
         djson = response.json()
         print(djson)
 
