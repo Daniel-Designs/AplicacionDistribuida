@@ -5,8 +5,13 @@ class ServerFunctions:
 
 
     def comprarProductoByID(self, pro):
-        
-        productos = listarProductos()
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
+        djson = response.json()
+        #print(djson)
+        productos = djson
         print(productos)
         for producto in productos:
             print(producto)
