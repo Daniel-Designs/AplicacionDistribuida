@@ -21,8 +21,8 @@ class MyWebService(object):
    @cherrypy.expose
    @cherrypy.tools.json_in()           #Luego por eso no jala
    def pagarProductoByID(self):
-      productos = cherrypy.request.json
-      output = p.pagarProductoByID(productos) 
+      ID = cherrypy.request.json
+      output = p.pagarProductoByID(ID) 
       return json.dumps(output)          
 
    @cherrypy.expose

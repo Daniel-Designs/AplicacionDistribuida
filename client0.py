@@ -83,6 +83,7 @@ while repetir == 'si':
         if pagar == 'si':
             tarjeta = input("Ingresa los 16 numero de tu tarjeta de credito:  ")
             datos = {'TARJETA':tarjeta,'TICKETSCOMPRA':ticketsCompra}
+            print(datos)
             response = requests.post('http://10.95.1.4:8080/pagarProductoByID', json = datos)
             #response = requests.post('http://localhost:8080/pagarProductoByID', json = datos)
             djson = response.json()
