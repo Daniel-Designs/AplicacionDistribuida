@@ -3,14 +3,6 @@ import json
 
 class ServerFunctions:    
 
-    def listarProductos(self):
-        headers = {
-            'Content-Type': 'application/json',
-        }
-        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
-        djson = response.json()
-        print(djson)
-        return djson
 
     def comprarProductoByID(self, pro):
         
@@ -29,4 +21,13 @@ class ServerFunctions:
         for producto in productos:  
             print("\n\nEste producto ha sido pagado usando el siguiente metodo de Pago: " + productos['TARJETA'])
         return "\n\n********************* El pago se ha efectuado CORRECTAMENTE **************\n\n \t\t\tGracias por confiar en Nosotros."
-        
+    
+    
+    def listarProductos(self):
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
+        djson = response.json()
+        print(djson)
+        return djson
