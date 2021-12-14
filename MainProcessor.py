@@ -29,9 +29,9 @@ class ServerFunctions:
                 return retorno
                 
     def pagarProductoByID(self, productos):
-        print(productos)
-        #for producto in productos:  
-        #print("\n\nEste producto ha sido pagado usando el siguiente metodo de Pago: " + productos['TARJETA'])
+        print(productos['TICKETSCOMPRA'])
+        for producto in productos['TICKETSCOMPRA']:  
+            print("\n\nEste producto ha sido pagado usando el siguiente metodo de Pago: " + productos['TARJETA'])
         return "\n\n********************* El pago se ha efectuado CORRECTAMENTE **************\n\n \t\t\tGracias por confiar en Nosotros."
     
     
