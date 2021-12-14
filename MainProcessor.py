@@ -16,7 +16,7 @@ class ServerFunctions:
         for producto in productos:
             print(producto)
             if(producto['ID'] == pro['ID']):
-                codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + pro['CANTIDAD'] + 'XDF'
+                codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + str(pro['CANTIDAD']) + 'XDF'
                 montoAPagar = producto['COST'] * pro['CANTIDAD']
                 retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
                 return retorno
