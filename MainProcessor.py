@@ -7,31 +7,26 @@ class ServerFunctions:
         headers = {
             'Content-Type': 'application/json',
         }
-        
-        #data = '{"num1" : [1, 2, 3], "num2":[4, 5, 6]}'
-        #response = requests.post('http://10.95.1.79:8080/suma', headers=headers, data=data)
-        #djson = response.json()
-        #djson = json.loads(djson)
-        #print(djson)
-
         response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
         djson = response.json()
         print(djson)
-
         return djson
 
-    def comprarProductoByID(self, producto):
-        headers = {
-            'Content-Type': 'application/json',
-        }
-        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
-        productos = response.json()
+    def comprarProductoByID(self, pro):
+        
+        productos = listarProductos()
         print(productos)
         for producto in productos:
             print(producto)
-            print("yes")
-            if(producto['ID'] == producto['ID']):
-                return producto
+            if(producto['ID'] == pro['ID']):
+                codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + pro['CANTIDAD'] + 'XDF'
+                montoAPagar = producto['COST'] * pro['CANTIDAD']
+                retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
+                return retorno
                 
-            
+    def pagarProductoByID(self, productos):
+        print(productos['TICKETSCOMPRA'])
+        for producto in productos:  
+            print("\n\nEste producto ha sido pagado usando el siguiente metodo de Pago: " + productos['TARJETA'])
+        return "\n\n********************* El pago se ha efectuado CORRECTAMENTE **************\n\n \t\t\tGracias por confiar en Nosotros."
         
