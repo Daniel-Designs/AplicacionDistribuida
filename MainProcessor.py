@@ -22,34 +22,24 @@ class ServerFunctions:
         headers = {
             'Content-Type': 'application/json',
         }
-        try:
-            response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
-            djson = response.json()
-            #print(djson)
-            productos = djson
-        except:
-            print("El servidor no 10.95.1.79 no sirve por lo que utilizaremos el 10.95.1.140 ")
-            response = requests.get('http://10.95.1.140:8080/listarProductos', headers=headers)
-            djson = response.json()
-            productos = djson
+      
+        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
+        djson = response.json()
+        #print(djson)
+        productos = djson    
         
         print(productos)
         for producto in productos:
             print(producto)
-            try:
-                    
-                if(producto['ID'] == pro['ID']):
-                    codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + str(pro['CANTIDAD']) + 'XDF'
-                    montoAPagar = producto['COST'] * pro['CANTIDAD']
-                    retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
-                    return retorno
-                else:
-                    raise ValueError("No existe ningun item con el ID seleccionado")
+            if(producto['ID'] == pro['ID']):
+                codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + str(pro['CANTIDAD']) + 'XDF'
+                montoAPagar = producto['COST'] * pro['CANTIDAD']
+                retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
+                return retorno 
+            #else:
+             #   raise ValueError("No existe ningun item con el ID seleccionado")
                 
-            except:
                 
-                return 'No existe un ningun producto con ID' + pro['ID']
-    
     def pagarProductoByID(self, productos):
         try:
             response = requests.post('http://10.95.1.79:8080/pagarProductoByID', json = productos)
