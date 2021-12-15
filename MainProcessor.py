@@ -52,12 +52,12 @@ class ServerFunctions:
     
     def pagarProductoByID(self, productos):
         try:
-            response = requests.post('http://10.95.1.79:8080/pagarProductoByID', json = datos)
+            response = requests.post('http://10.95.1.79:8080/pagarProductoByID', json = productos)
             djson = response.json()
             print(djson)    
             return djson
         except:
-            response = requests.post('http://10.95.1.140:8080/pagarProductoByID', json = datos)
+            response = requests.post('http://10.95.1.140:8080/pagarProductoByID', json = productos)
             djson = response.json()
             print(djson)
             return djson
