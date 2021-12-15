@@ -61,6 +61,7 @@ while repetir == 'si':
                 print()
             except:
                 print("3 El error fue: ",sys.exc_info()[0])
+            x+=1
 
     elif menu == 2:
          
@@ -135,7 +136,7 @@ while repetir == 'si':
             except:
                 print("3 El error fue: ",sys.exc_info()[0])
 
-    
+            x+=1
     
             
     else :
