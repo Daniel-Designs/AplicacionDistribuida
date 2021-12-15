@@ -1,11 +1,29 @@
 import requests
 import json
+import time
 
 class ServerFunctions:    
     def listarProductos(self):
         headers = {
             'Content-Type': 'application/json',
         }
+        
+        try:
+            response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
+            djson = response.json()
+            print(djson)
+            return djson
+        except:
+            response = requests.get('http://10.95.1.140:8080/listarProductos', headers=headers)
+            djson = response.json()
+            print(djson)
+            return djson
+    
+    def listar(self):
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        time.sleep(7)
         try:
             response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
             djson = response.json()

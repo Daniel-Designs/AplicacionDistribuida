@@ -26,14 +26,9 @@ class MyWebService(object):
       return json.dumps(output)          
 
    @cherrypy.expose
-   @cherrypy.tools.json_out()
-   @cherrypy.tools.json_in()
-   def suma(self):
-      data = cherrypy.request.json
-      df = pd.DataFrame(data)
-      
-      output = p.suma(df)
-      return output.to_json()
+   def listar(self):
+      output = p.listar() 
+      return json.dumps(output)           #Chance ya no necesito enviar nada.
 
 
   
