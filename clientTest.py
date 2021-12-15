@@ -36,7 +36,7 @@ usuario = 'USERNAMETEST'
 repetir = 'si'
 
 while repetir == 'si':
-    print("\t 1.Listar Productos\n\n 2.Comprar Productos\t\n\nPagar 3.productos\n\nPagar 4.Listar Productos con delay\n\n")
+    print("\t 1.Listar Productos\n\n\t 2.Comprar Productos\n\n\t3.Pagar productos\n\n\t4.Listar Productos con delay\n\n")
     print("\t\t\t\t Por favor seleccione una opcion\n\n")
     
     try:
