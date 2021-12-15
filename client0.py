@@ -44,7 +44,8 @@ while repetir == 'si':
     try:
         menu = int(input("Numero del Menu: "))
     except:
-        print("\n ---------Recuerda que solo se permiten numeros enteros----------")
+        print("\n 2---------Recuerda que solo se permiten numeros enteros----------")
+        menu = 0
         
     print("\n\n")
 
@@ -58,7 +59,7 @@ while repetir == 'si':
             see(djson)
             print()
         except:
-            print("El error fue: ",sys.exc_info()[0])
+            print("3 El error fue: ",sys.exc_info()[0])
 
     elif menu == 2:
         print('\t\t\t\tSeccion <Comprar Productos>: \n\n')
@@ -69,7 +70,7 @@ while repetir == 'si':
             numeroArticulos = int(input("Ingresa la cantidad de articulos que deseas adquirir:  "))
             confirmacion = input("\n\nConfirma tu compra escribiendo <si>")
         except:
-            print("Recuerda que deben ser numeros positivos enteros")
+            print(" 4Recuerda que deben ser numeros positivos enteros")
             confirmacion = "no"
         
         
@@ -78,11 +79,12 @@ while repetir == 'si':
             #print(producto+"\n\n") 
             #seeList(ticketsCompra)
             try:
-                response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
-                #response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
+                #response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
+                response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
                 djson = response.json()
                 
                 if isinstance(djson,str):
+                    print("ups un error")
                     raise ValueError(djson)
                 
                 producto['CODIGOPAGO'] = djson['codigoPago']
@@ -92,8 +94,8 @@ while repetir == 'si':
                 seeList(ticketsCompra)
                 print("\n\n\t\t*********************Compra generada********************\n\n")
             
-            except:
-                print("El error fue: ",sys.exc_info()[0])
+            except ValueError :
+                print("5 El error fue: ",sys.exc_info()[0])
             
             
     elif menu == 3:
