@@ -82,7 +82,7 @@ while repetir == 'si':
                 response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
                 #response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
                 djson = response.json()
-                
+                print(djson)
                 if isinstance(djson,str):
                     print("ups un error")
                     raise ValueError(djson)
