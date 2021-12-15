@@ -11,12 +11,14 @@ class ServerFunctions:
         try:
             response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
+            print('\n Se mando correctamente la lista de productos\n')
             return djson
         except:
             response = requests.get('http://10.95.1.140:8080/listarProductos', headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
+            print('\n Se mando correctamente la lista de productos\n')
             return djson
     
     def listar(self):
@@ -27,12 +29,14 @@ class ServerFunctions:
         try:
             response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
+            print('\n Se mando correctamente la lista de productos****CON DELAY 7 SEGUNDOS*****\n')
             return djson
         except:
             response = requests.get('http://10.95.1.140:8080/listarProductos', headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
+            print('\n Se mando correctamente la lista de productos****CON DELAY 7 SEGUNDOS*****\n')
             return djson
             
 
@@ -43,21 +47,22 @@ class ServerFunctions:
         try:
             response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
            
         except:
             response = requests.get('http://10.95.1.140:8080/listarProductos', headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
             
         productos = djson
-        print(productos)
+        #print(productos)
         for producto in productos:
-            print(producto)
+            #print(producto)
             if(producto['ID'] == pro['ID']):
                 codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + str(pro['CANTIDAD']) + 'XDF'
                 montoAPagar = producto['COST'] * pro['CANTIDAD']
                 retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
+                print('\nSe ejecuto el proceso de compra correctamente\n')
                 return retorno 
         
         return 'El valor del ID no existe'        
@@ -66,12 +71,14 @@ class ServerFunctions:
         try:
             response = requests.post('http://10.95.1.79:8080/pagarProductoByID', json = productos)
             djson = response.json()
-            print(djson)    
+            #print(djson)  
+            print('\nSe ejecuto el proceso de PAGO correctamente\n')  
             return djson
         except:
             response = requests.post('http://10.95.1.140:8080/pagarProductoByID', json = productos)
             djson = response.json()
-            print(djson)
+            print('\nSe ejecuto el proceso de PAGO correctamente\n')
+            #print(djson)
             return djson
         
     
