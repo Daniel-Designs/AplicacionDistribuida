@@ -52,8 +52,8 @@ while repetir == 'si':
     if menu == 1:
         print('\t\t\t<Listar Productos:>  \n\n')
         try:
-            #response = requests.get('http://10.95.1.4:8080/listarProductos', headers=headers)
-            response = requests.get("http://localhost:8080/listarProductos", headers=headers)
+            response = requests.get('http://10.95.1.4:8080/listarProductos', headers=headers)
+            #response = requests.get("http://localhost:8080/listarProductos", headers=headers)
             djson = response.json()
             print(djson)
             see(djson)
@@ -79,8 +79,8 @@ while repetir == 'si':
             #print(producto+"\n\n") 
             #seeList(ticketsCompra)
             try:
-                #response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
-                response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
+                response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
+                #response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
                 djson = response.json()
                 print(djson)
                 print("No se de donde viene esto")
