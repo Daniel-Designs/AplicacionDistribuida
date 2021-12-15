@@ -31,18 +31,13 @@ class ServerFunctions:
         print(productos)
         for producto in productos:
             print(producto)
-            try:
-                if(producto['ID'] == pro['ID']):
-                    codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + str(pro['CANTIDAD']) + 'XDF'
-                    montoAPagar = producto['COST'] * pro['CANTIDAD']
-                    retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
-                    return retorno 
-                else:
-                   raise ValueError("No existe ningun item con el ID seleccionado")
-            except:
-                
-                return 'El ID NO EXISTE'
-                    
+            if(producto['ID'] == pro['ID']):
+                codigoPago = producto['ID'] + pro['USUARIO'] + producto['NAME'] + str(pro['CANTIDAD']) + 'XDF'
+                montoAPagar = producto['COST'] * pro['CANTIDAD']
+                retorno = {'codigoPago':codigoPago,'montoAPagar':montoAPagar}
+                return retorno 
+        
+        return 'El valor del ID no existe'        
                 
     def pagarProductoByID(self, productos):
         try:
