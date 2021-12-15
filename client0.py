@@ -79,8 +79,8 @@ while repetir == 'si':
             #print(producto+"\n\n") 
             #seeList(ticketsCompra)
             try:
-                #response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
-                response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
+                response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
+                #response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
                 djson = response.json()
                 
                 if isinstance(djson,str):
