@@ -32,7 +32,7 @@ class ServerFunctions:
             djson = response.json()
             print(djson)
             
-        
+        productos = djson
         print(productos)
         for producto in productos:
             print(producto)
