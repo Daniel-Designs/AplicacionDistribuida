@@ -49,9 +49,9 @@ while repetir == 'si':
 
     if menu == 1:
        
-        print('\t\t\t<Listar Productos:>  \n\n\t\t\tSe repetira 15 veces  \n\n')
+        print('\t\t\t<Listar Productos:>  \n\n\t\t\tSe repetira 1000 veces  \n\n')
         x=1
-        while x < 50:
+        while x < 1000:
             try:
                 response = requests.get('http://10.95.1.4:8080/listarProductos', headers=headers)
                 #response = requests.get("http://localhost:8080/listarProductos", headers=headers)
@@ -65,13 +65,13 @@ while repetir == 'si':
 
     elif menu == 2:
          
-        print('\t\t\t\tSeccion <Comprar Productos>: 50 veces \n\n')
+        print('\t\t\t\tSeccion <Comprar Productos>: 1000 veces \n\n')
         print('Para efectos practicos se realizaran con los valores estaticos ID=4 Cantidad=5 \n\n')
         ID= '5'
         numeroArticulos = 5
         print("\n\n")
         x=0
-        while x < 50:
+        while x < 1000:
         
             producto = {'ID': ID,'NAME':'Producto'+ID, 'CANTIDAD': numeroArticulos, 'USUARIO':usuario}
                 #print(producto+"\n\n") 
@@ -98,9 +98,9 @@ while repetir == 'si':
             x+=1    
             
     elif menu == 3:
-        print('\t\t\t\tSeccion <Pagar Productos>: 50 veces \n\n')
+        print('\t\t\t\tSeccion <Pagar Productos>: 1000 veces \n\n')
         x = 0
-        while x < 50:
+        while x < 1000:
             if len(ticketsCompraTest)>0:
                 print('Tienes registradas las siguientes compras: \n\n')
                 seeList(ticketsCompra)
