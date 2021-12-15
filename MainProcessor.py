@@ -22,11 +22,16 @@ class ServerFunctions:
         headers = {
             'Content-Type': 'application/json',
         }
-      
-        response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
-        djson = response.json()
-        #print(djson)
-        productos = djson    
+        try:
+            response = requests.get('http://10.95.1.79:8080/listarProductos', headers=headers)
+            djson = response.json()
+            print(djson)
+            return djson
+        except:
+            response = requests.get('http://10.95.1.140:8080/listarProductos', headers=headers)
+            djson = response.json()
+            print(djson)
+            return djson
         
         print(productos)
         for producto in productos:
