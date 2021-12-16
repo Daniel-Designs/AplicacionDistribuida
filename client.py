@@ -55,7 +55,7 @@ while repetir == 'si':
             response = requests.get('http://10.95.1.4:8080/listarProductos', headers=headers)
             #response = requests.get("http://localhost:8080/listarProductos", headers=headers)
             djson = response.json()
-            print(djson)
+            #print(djson)
             see(djson)
             print()
         except:
@@ -82,8 +82,8 @@ while repetir == 'si':
                 response = requests.post('http://10.95.1.4:8080/comprarProductoByID', json = producto)
                 #response = requests.post('http://localhost:8080/comprarProductoByID', json = producto)
                 djson = response.json()
-                print(djson)
-                print("No se de donde viene esto")
+                #print(djson)
+                #print("No se de donde viene esto")
                 if isinstance(djson,str):
                     print("ups un error")
                     raise ValueError(djson)
@@ -108,7 +108,7 @@ while repetir == 'si':
             if pagar == 'si':
                 tarjeta = input("Ingresa los 16 numero de tu tarjeta de credito:  ")
                 datos = {'TARJETA':tarjeta,'TICKETSCOMPRA':ticketsCompra}
-                print(datos)
+                #print(datos)
                 try:    
                     response = requests.post('http://10.95.1.4:8080/pagarProductoByID', json = datos)
                     #response = requests.post('http://localhost:8080/pagarProductoByID', json = datos)
