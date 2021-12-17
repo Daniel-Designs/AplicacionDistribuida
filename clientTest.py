@@ -70,7 +70,7 @@ while repetir == 'si':
         numeroArticulos = 5
         print("\n\n")
         x=0
-        while x < 1000:
+        while x < 6:
         
             producto = {'ID': ID,'NAME':'Producto'+ID, 'CANTIDAD': numeroArticulos, 'USUARIO':usuario}
                 #print(producto+"\n\n") 
@@ -94,6 +94,7 @@ while repetir == 'si':
                 
             except ValueError :
                 print("5 El error fue: ",sys.exc_info()[0])
+                
             x+=1    
             
     elif menu == 3:
