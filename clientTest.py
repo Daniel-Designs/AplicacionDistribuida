@@ -120,7 +120,7 @@ while repetir == 'si':
                 print("Por el momento no tienes ninguna compra asociada\n\n"); 
             x+=1    
     
-    if menu == 4:
+    elif menu == 4:
        
         print('\t\t\t<Listar Productos con un Delay de 7s:>  \n\n\t\t\tSe repetira 7 veces  \n\n')
         x=0
@@ -139,7 +139,7 @@ while repetir == 'si':
     
             
     else :
-        #print('Menu no valido por favor selecciona otra opcion\n\n')
+        print('Menu no valido por favor selecciona otra opcion\n\n')
         
     print("\n\n Deseas Repetir el menu pricipal\n\n")
     repetir =input("si/No: ")
