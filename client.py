@@ -59,7 +59,7 @@ while repetir == 'si':
             see(djson)
             print()
         except:
-            print("3 El error fue: ",sys.exc_info()[0])
+            print("\n\n ****  UPS El servior no esta Disponible en estos momentos *** \n\n ",sys.exc_info()[0])
 
     elif menu == 2:
         print('\t\t\t\tSeccion <Comprar Productos>: \n\n')
