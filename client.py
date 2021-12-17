@@ -97,6 +97,9 @@ while repetir == 'si':
             
             except ValueError :
                 print("5 El error fue: ",sys.exc_info()[0])
+                
+            except:
+            print("\n\n ****  UPS El servior no esta Disponible en estos momentos *** \n\n ",sys.exc_info()[0])
             
             
     elif menu == 3:
@@ -116,7 +119,7 @@ while repetir == 'si':
                     print(djson)    
                     ticketsCompra = []
                 except:
-                    print("El error fue: ",sys.exc_info()[0])   
+                    print("\n\n ****  UPS El servior no esta Disponible en estos momentos *** \n\n ",sys.exc_info()[0])   
         else: 
             print("Por el momento no tienes ninguna compra asociada\n\n"); 
             
