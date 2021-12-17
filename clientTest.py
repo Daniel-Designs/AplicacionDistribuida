@@ -70,7 +70,7 @@ while repetir == 'si':
         numeroArticulos = 5
         print("\n\n")
         x=0
-        while x < 100:
+        while x < 1000:
         
             producto = {'ID': ID,'NAME':'Producto'+ID, 'CANTIDAD': numeroArticulos, 'USUARIO':usuario}
                 #print(producto+"\n\n") 
