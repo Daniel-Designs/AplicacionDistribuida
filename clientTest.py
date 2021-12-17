@@ -1,6 +1,5 @@
 import requests
 import json
-import sys
 import pandas as pd
 from pandas import json_normalize
 
@@ -140,7 +139,7 @@ while repetir == 'si':
     
             
     else :
-        print('Menu no valido por favor selecciona otra opcion\n\n')
+        #print('Menu no valido por favor selecciona otra opcion\n\n')
         
     print("\n\n Deseas Repetir el menu pricipal\n\n")
     repetir =input("si/No: ")
